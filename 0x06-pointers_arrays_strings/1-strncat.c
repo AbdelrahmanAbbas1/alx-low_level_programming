@@ -5,6 +5,8 @@
  * @dest: the destination string
  * @src: the source string
  * @n: the numebr of bytes in src
+ *
+ * Return: The destination string
  */
 char *_strncat(char *dest, char *src, int n)
 {
@@ -17,7 +19,7 @@ char *_strncat(char *dest, char *src, int n)
 	}
 	for (i = 0; i < n && src[i] != '\0'; i++)
 	{
-		dest [len + i] = src[i];
+		dest[len + i] = src[i];
 	}
 	dest[len + i] = '\0';
 	return (dest);
