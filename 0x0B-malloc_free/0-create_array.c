@@ -6,7 +6,7 @@
  * @size: The first argument
  * @c: The second argument
  *
- * Rrturn: the array or NULL otherwise
+ * Return: the array or NULL otherwise
  */
 char *create_array(unsigned int size, char c)
 {
