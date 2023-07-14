@@ -35,5 +35,6 @@ int main(int ac, char **av)
 		sum *= atoi(av[i]);
 	}
 	printf("%d\n", sum);
+
 	return (0);
 }
