@@ -3,7 +3,7 @@
 
 /**
  * free_dog - Frees memory allocated dogs
- * d: the structure variable to be freed
+ * @d: the structure variable to be freed
  */
 void free_dog(dog_t *d)
 {
