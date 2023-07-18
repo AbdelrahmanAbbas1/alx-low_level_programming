@@ -1,5 +1,4 @@
-#include "main.h"
-#include <stdlib.h>
+#include <stdio.h>
 
 /**
  * main - Entry point
@@ -8,14 +7,6 @@
  */
 int main(void)
 {
-	int i;
-
-	for (i = 0; __FILE__[i] != '\0'; i++)
-	{
-		_putchar(__FILE__[i]);
-	}
-	_putchar('\0');
-	_putchar('\n');
-
+	printf("%s\n", __FILE__);
 	return (0);
 }
