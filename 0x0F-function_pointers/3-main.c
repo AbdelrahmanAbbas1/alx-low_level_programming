@@ -24,7 +24,7 @@ int main(int ac, char **av)
 	op = av[2];
 	num2 = atoi(av[3]);
 
-	if (get_op_func == NULL || op[1] != '\0')
+	if (get_op_func(op) == NULL || op[1] != '\0')
 	{
 		printf("Error\n");
 		exit(99);
