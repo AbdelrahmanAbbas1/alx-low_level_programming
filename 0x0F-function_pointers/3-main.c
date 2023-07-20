@@ -9,11 +9,10 @@
  *
  * Return: 0 (Sucess) or otherwise in error
  */
-int main(int ac, char **av)
+int main(int __attribute__((__unused__)) ac, char **av)
 {
 	int num1, num2;
 	char *op;
-	(void)ac;
 
 	if (ac != 4)
 	{
