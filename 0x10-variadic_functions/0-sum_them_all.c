@@ -3,7 +3,8 @@
 
 /**
  * sum_them_all - Returns the sum of all its parameters
- * @n: The first argument
+ * @n: The number of arguments to be passed
+ * @...: The arguments to be calculated
  *
  * Return: The sum of all arguments
  */
