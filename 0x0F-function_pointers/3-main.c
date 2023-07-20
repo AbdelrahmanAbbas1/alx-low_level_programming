@@ -13,6 +13,7 @@ int main(int ac, char **av)
 {
 	int num1, num2;
 	char *op;
+	(void)ac;
 
 	if (ac != 4)
 	{
