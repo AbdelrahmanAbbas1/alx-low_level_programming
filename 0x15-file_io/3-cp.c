@@ -40,7 +40,7 @@ int main(int ac, char **av)
 
 	fd = open(av[1], O_RDONLY);
 	br = read(fd, buffer, buffer_size);
-	fd1 = open(av[2], O_RDWR | O_CREAT | O_TRUNC, 0664);
+	fd1 = open(av[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 
 	do {
 		if (br == -1 || fd == -1)
