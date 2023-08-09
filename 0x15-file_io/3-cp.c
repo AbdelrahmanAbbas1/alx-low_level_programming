@@ -1,6 +1,24 @@
 #include "main.h"
 
 /**
+ * create_buffer - Creates a buffer
+ * @file: The name of the destination file
+ *
+ * Return: The buffer
+ */
+char *create_buffer(char *file)
+{
+	char *buffer;
+
+	buffer = malloc(sizeof(char) * 1024);
+	if (buffer == NULL)
+	{
+		dprintf(2, "Error: Can't write to %s\n" file);
+		exit(99);
+	}
+	return (buffer);
+}
+/**
  * close_fd - Closes a file
  * @fd: the file descriptor
  */
@@ -36,8 +54,7 @@ int main(int ac, char **av)
 		exit(97);
 	}
 
-	buffer = malloc(sizeof(char) * buffer_size);
-
+	buffer = create_buffer(av[2]);
 	fd = open(av[1], O_RDONLY);
 	br = read(fd, buffer, buffer_size);
 	fd1 = open(av[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
