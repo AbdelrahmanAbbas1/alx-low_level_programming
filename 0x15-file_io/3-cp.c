@@ -13,7 +13,7 @@ char *create_buffer(char *file)
 	buffer = malloc(sizeof(char) * 1024);
 	if (buffer == NULL)
 	{
-		dprintf(2, "Error: Can't write to %s\n" file);
+		dprintf(2, "Error: Can't write to %s\n", file);
 		exit(99);
 	}
 	return (buffer);
