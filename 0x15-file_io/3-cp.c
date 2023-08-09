@@ -1,5 +1,6 @@
 #include "main.h"
-
+char *create_buffer(char *file);
+void close_fd(int fd);
 /**
  * create_buffer - Creates a buffer
  * @file: The name of the destination file
@@ -13,7 +14,7 @@ char *create_buffer(char *file)
 	buffer = malloc(sizeof(char) * 1024);
 	if (buffer == NULL)
 	{
-		dprintf(2, "Error: Can't write to %s\n", file);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file);
 		exit(99);
 	}
 	return (buffer);
@@ -29,7 +30,7 @@ void close_fd(int fd)
 	fd_v = close(fd);
 	if (fd_v == -1)
 	{
-		dprintf(2, "Error: Can't close fd %d\n", fd);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
 		exit(100);
 	}
 }
@@ -50,7 +51,7 @@ int main(int ac, char **av)
 
 	if (ac != 3)
 	{
-		dprintf(2, "Usage: cp file_from file_to\n");
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 
@@ -63,14 +64,14 @@ int main(int ac, char **av)
 		if (br == -1 || fd == -1)
 		{
 			free(buffer);
-			dprintf(2, "Error: Can't read from file %s\n", av[1]);
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
 			exit(98);
 		}
 		bw = write(fd1, buffer, br);
 		if (bw == -1 || fd1 == -1)
 		{
 			free(buffer);
-			dprintf(2, "Error: Can't write to %s\n", av[2]);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
 			exit(99);
 		}
 		br = read(fd, buffer, buffer_size);
