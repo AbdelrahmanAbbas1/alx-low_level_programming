@@ -41,8 +41,8 @@ int main(int ac, char **av)
 	fd = open(av[1], O_RDONLY);
 	br = read(fd, buffer, buffer_size);
 	fd1 = open(av[2], O_RDWR | O_CREAT | O_TRUNC, 0664);
-	while (br > 0)
-	{
+
+	do {
 		if (br == -1 || fd == -1)
 		{
 			free(buffer);
@@ -58,7 +58,7 @@ int main(int ac, char **av)
 		}
 		br = read(fd, buffer, buffer_size);
 		fd1 = open(av[2], O_WRONLY | O_APPEND);
-	}
+	} while (br > 0);
 	free(buffer);
 	close_fd(fd);
 	close_fd(fd1);
