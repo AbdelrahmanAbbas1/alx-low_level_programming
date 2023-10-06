@@ -21,12 +21,12 @@ void hash_table_print(const hash_table_t *ht)
 			if (comma_flag == 1)
 				printf(", ");
 			hash_node = ht->array[i];
-			while(hash_node)
+			while (hash_node)
 			{
-				 printf("'%s':'%s'", hash_node->key, hash_node->value);
-				 hash_node = hash_node->next;
-				 if (hash_node != NULL)
-					 printf(", ");
+				printf("'%s':'%s'", hash_node->key, hash_node->value);
+				hash_node = hash_node->next;
+				if (hash_node != NULL)
+					printf(", ");
 			}
 			comma_flag = 1;
 		}
